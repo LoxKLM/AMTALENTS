@@ -1,0 +1,348 @@
+/* =========================================================
+   AM TALENTS — hero.css
+   Layout 3 rangées (clearance navbar | contenu centré | espace bas)
+   Vidéo de fond, double overlay directionnel, animations d'entrée
+========================================================= */
+
+/* -------------------------------------------------------
+   Structure principale
+   grid-template-rows: navbar clearance | contenu 1fr | espace scroll
+------------------------------------------------------- */
+
+.am-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  padding: 0 64px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  grid-template-rows: 90px 1fr 100px;
+  column-gap: 60px;
+  overflow: hidden;
+  background: var(--am-ink-900); /* fallback sombre si vidéo absente */
+}
+
+/* -------------------------------------------------------
+   Fond vidéo
+   Aucun filtre — qualité native du fichier source.
+   Fondu à l'entrée via .am-hero--video-ready (JS).
+------------------------------------------------------- */
+
+.am-hero__video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+.am-hero--video-ready .am-hero__video-bg {
+  opacity: 1;
+}
+
+/* -------------------------------------------------------
+   Double overlay directionnel
+   Côté  : gauche sombre (lisibilité titre) → centre clair → droite mi-sombre
+   Bas   : bas sombre → transparent (ancrage visuel)
+------------------------------------------------------- */
+
+.am-hero__overlay-side {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.75) 0%,
+    rgba(0, 0, 0, 0.20) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+  z-index: 1;
+}
+
+.am-hero__overlay-bottom {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.50) 0%,
+    transparent 40%
+  );
+  z-index: 1;
+}
+
+/* -------------------------------------------------------
+   Z-index du contenu (tout passe au-dessus des overlays)
+------------------------------------------------------- */
+
+.am-hero__title,
+.am-hero__meta {
+  position: relative;
+  z-index: 2;
+}
+
+.am-hero__eyebrow,
+.am-hero__chip,
+.am-hero__scroll { z-index: 2; }
+
+/* -------------------------------------------------------
+   Animations d'entrée — déclenchées par .am-hero--ready (JS)
+   Les éléments avec [data-hero-anim] démarrent à opacity: 0.
+   animation-delay défini en inline style dans le HTML.
+------------------------------------------------------- */
+
+.am-hero [data-hero-anim] {
+  opacity: 0;
+}
+
+.am-hero--ready [data-hero-anim="fade-up"] {
+  animation: am-fade-in-up 0.5s var(--am-ease-out) both;
+}
+
+.am-hero--ready [data-hero-anim="fade-down"] {
+  animation: am-fade-in-down 0.5s var(--am-ease-out) both;
+}
+
+.am-hero--ready [data-hero-anim="slide-right"] {
+  animation: am-slide-in-right 0.6s var(--am-ease-out) both;
+}
+
+/* -------------------------------------------------------
+   Badge "● AGENCE DIGITALE · MARSEILLE"
+   Glassmorphism toujours actif — position absolue haut-gauche
+------------------------------------------------------- */
+
+.am-hero__eyebrow {
+  position: absolute;
+  top: 110px;
+  left: 64px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.am-hero__pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--am-orange-400);
+  animation: am-pulse 2s infinite var(--am-ease-out);
+}
+
+/* -------------------------------------------------------
+   Titre H1 — rangée 2, colonne gauche, centré verticalement
+------------------------------------------------------- */
+
+.am-hero__title {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: center;
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  line-height: 1.0;
+  letter-spacing: -0.035em;
+  margin: 0;
+  color: #fff;
+  max-width: 12ch;
+  text-wrap: balance;
+}
+
+.am-hero__italic {
+  font-family: var(--am-font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: #fff;
+}
+
+.am-hero__dot {
+  color: var(--am-orange-400);
+}
+
+/* -------------------------------------------------------
+   Colonne méta — rangée 2, colonne droite, centrée verticalement
+   Sous-titre + boutons CTA
+------------------------------------------------------- */
+
+.am-hero__meta {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.am-hero__lead {
+  font-size: 18px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  max-width: 400px;
+}
+
+.am-hero__actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Bouton ghost adapté au fond sombre */
+.am-hero .am-btn--ghost {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.am-hero .am-btn--ghost:hover {
+  color: var(--am-orange-400);
+}
+
+/* -------------------------------------------------------
+   Chips flottants — glassmorphism renforcé, point live vert
+------------------------------------------------------- */
+
+.am-hero__chip {
+  position: absolute;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  padding: 14px 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* "+184% engagement" — haut droite */
+.am-hero__chip--1 {
+  top: 160px;
+  right: 64px;
+  transform: rotate(2deg);
+}
+
+/* "23 clients actifs" — milieu droite */
+.am-hero__chip--2 {
+  top: 310px;
+  right: 180px;
+  transform: rotate(-3deg);
+}
+
+/* Point live vert pulsant */
+.am-hero__live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: am-live-pulse 2s infinite;
+}
+
+.am-hero__chip-t {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: -0.02em;
+  color: var(--am-ink-900);
+  line-height: 1;
+}
+
+.am-hero__chip-s {
+  font-size: 11px;
+  color: var(--am-ink-500);
+  margin-top: 3px;
+}
+
+/* -------------------------------------------------------
+   Indicateur de scroll — vertical, bas-gauche
+------------------------------------------------------- */
+
+.am-hero__scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  z-index: 2;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.am-hero__scroll-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: var(--am-font-body);
+}
+
+.am-hero__scroll-bar {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 1px;
+}
+
+.am-hero__scroll-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  animation: am-slide-down 2s infinite var(--am-ease-out);
+}
+
+/* -------------------------------------------------------
+   Responsive
+------------------------------------------------------- */
+
+@media (max-width: 1024px) {
+  .am-hero          { padding: 0 40px; }
+  .am-hero__eyebrow { left: 40px; }
+  .am-hero__scroll  { left: 40px; }
+}
+
+@media (max-width: 960px) {
+  /* Passer en flex colonne pour empiler titre + meta */
+  .am-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    padding: 120px 40px 100px;
+  }
+
+  .am-hero__chip--1,
+  .am-hero__chip--2 { display: none; }
+
+  .am-hero__meta { max-width: 100%; }
+}
+
+@media (max-width: 640px) {
+  .am-hero {
+    padding: 100px 24px 80px;
+    gap: 24px;
+  }
+
+  .am-hero__eyebrow { left: 24px; top: 80px; }
+  .am-hero__scroll  { left: 24px; }
+}

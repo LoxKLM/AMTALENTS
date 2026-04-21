@@ -1,0 +1,348 @@
+/* =========================================================
+   AM TALENTS — services.css
+   Section "4 métiers" — maquette téléphone + liste services
+========================================================= */
+
+.am-services {
+  padding: 140px 64px;
+  background: linear-gradient(180deg, var(--am-paper) 0%, var(--am-steel-50) 100%);
+}
+
+.am-services__head {
+  display: grid;
+  grid-template-columns: 160px 1.4fr 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+  align-items: end;
+}
+
+.am-services__dot {
+  color: var(--am-orange-400);
+}
+
+.am-services__intro {
+  font-size: 16px;
+  line-height: 1.55;
+  color: var(--am-ink-600);
+  margin: 0;
+  max-width: 360px;
+  align-self: end;
+  padding-bottom: 10px;
+}
+
+.am-services__layout {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* --- Maquette téléphone --- */
+
+.am-phone {
+  position: sticky;
+  top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 620px;
+}
+
+.am-phone__frame {
+  width: 300px;
+  height: 600px;
+  border-radius: 48px;
+  background: linear-gradient(160deg, #1B242B, #0E1419);
+  padding: 10px;
+  box-shadow:
+    0 40px 90px -20px rgba(14,20,25,0.4),
+    0 0 0 1px rgba(255,255,255,0.04) inset,
+    0 1px 0 rgba(255,255,255,0.1) inset;
+  position: relative;
+}
+
+.am-phone__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+  background: var(--am-paper);
+  overflow: hidden;
+  position: relative;
+}
+
+.am-phone__notch {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 24px;
+  background: #0E1419;
+  border-radius: 12px;
+  z-index: 3;
+}
+
+.am-phone__status {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 30px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--am-ink-900);
+  font-family: var(--am-font-display);
+}
+
+.am-phone__dots {
+  color: var(--am-ink-500);
+}
+
+.am-phone__reel {
+  height: calc(100% - 44px);
+  overflow: hidden;
+  mask: linear-gradient(180deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+  -webkit-mask: linear-gradient(180deg, transparent 0, #000 40px, #000 calc(100% - 40px), transparent 100%);
+}
+
+.am-phone__track {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 14px 12px;
+  animation: am-scroll-feed 22s linear infinite;
+}
+
+/* --- Posts du feed --- */
+
+.am-phone__post {
+  background: #fff;
+  border: 1px solid var(--am-steel-100);
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.am-phone__post-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+}
+
+.am-phone__avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px var(--am-orange-400);
+  flex-shrink: 0;
+}
+
+/* Avatars par client */
+.am-phone__avatar--bistrot   { background: linear-gradient(135deg,#D4A574,#8B4513 70%,#2B1810); }
+.am-phone__avatar--lumiere   { background: linear-gradient(140deg,#E8C9CC,#B8848F 60%,#6E3E46); }
+.am-phone__avatar--calanques { background: linear-gradient(135deg,#A8C3D4,#4A7A94 55%,#1B3647); }
+.am-phone__avatar--pharo     { background: linear-gradient(145deg,#F5E6D3,#E8703A 55%,#8B3A1A); }
+
+.am-phone__user {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--am-ink-900);
+  letter-spacing: -0.01em;
+}
+
+.am-phone__place {
+  font-size: 9px;
+  color: var(--am-ink-500);
+  margin-top: 1px;
+}
+
+.am-phone__menu-dot {
+  margin-left: auto;
+  color: var(--am-ink-400);
+  font-weight: 700;
+}
+
+.am-phone__media {
+  aspect-ratio: 1/1;
+  position: relative;
+}
+
+/* Médias par client */
+.am-phone__media--bistrot   { background: linear-gradient(135deg,#D4A574,#8B4513 70%,#2B1810); }
+.am-phone__media--lumiere   { background: linear-gradient(140deg,#E8C9CC,#B8848F 60%,#6E3E46); }
+.am-phone__media--calanques { background: linear-gradient(135deg,#A8C3D4,#4A7A94 55%,#1B3647); }
+.am-phone__media--pharo     { background: linear-gradient(145deg,#F5E6D3,#E8703A 55%,#8B3A1A); }
+
+.am-phone__badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(255,255,255,0.92);
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 10px;
+  color: var(--am-steel-700);
+  letter-spacing: -0.01em;
+}
+
+.am-phone__caption {
+  padding: 8px 12px 12px;
+  font-size: 10px;
+  color: var(--am-ink-700);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.am-phone__heart {
+  color: var(--am-orange-400);
+  font-size: 13px;
+}
+
+/* --- Badges flottants autour du téléphone --- */
+
+.am-phone__float {
+  position: absolute;
+  background: var(--am-white);
+  border: 1px solid var(--am-border);
+  border-radius: 14px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--am-shadow-md);
+  animation: am-float 6s ease-in-out infinite;
+}
+
+.am-phone__float--1 {
+  top: 80px;
+  left: -30px;
+  transform: rotate(-4deg);
+}
+
+.am-phone__float--2 {
+  bottom: 100px;
+  right: -40px;
+  transform: rotate(3deg);
+  animation-delay: -3s;
+}
+
+.am-phone__float-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.am-phone__float-dot--orange { background: var(--am-orange-400); }
+.am-phone__float-dot--steel  { background: var(--am-steel-500); }
+
+.am-phone__float-t {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--am-ink-900);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.am-phone__float-s {
+  font-size: 10px;
+  color: var(--am-ink-500);
+  margin-top: 2px;
+}
+
+/* --- Liste des services --- */
+
+.am-services__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.am-service-row {
+  display: grid;
+  grid-template-columns: 60px 1fr 40px;
+  gap: 28px;
+  padding: 36px 0;
+  border-top: 1px solid var(--am-steel-200);
+  align-items: start;
+  transition: all var(--am-dur-base) var(--am-ease-out);
+  cursor: pointer;
+}
+
+.am-service-row:last-child {
+  border-bottom: 1px solid var(--am-steel-200);
+}
+
+.am-service-row:hover {
+  padding-left: 8px;
+}
+
+.am-service-row:hover .am-service-row__arrow {
+  color: var(--am-orange-400);
+  transform: translateX(6px);
+}
+
+.am-service-row:hover .am-service-row__n {
+  color: var(--am-orange-400);
+}
+
+.am-service-row__n {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 28px;
+  color: var(--am-steel-500);
+  letter-spacing: -0.02em;
+  transition: color var(--am-dur-base);
+}
+
+.am-service-row__t {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 32px;
+  letter-spacing: -0.025em;
+  margin: 0 0 10px;
+  color: var(--am-ink-900);
+  line-height: 1.05;
+}
+
+.am-service-row__d {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--am-ink-600);
+  margin: 0 0 14px;
+  max-width: 480px;
+}
+
+.am-service-row__tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.am-service-row__arrow {
+  font-size: 28px;
+  color: var(--am-ink-400);
+  font-family: var(--am-font-display);
+  transition: all var(--am-dur-base) var(--am-ease-out);
+  align-self: center;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 1024px) {
+  .am-services { padding: 100px 40px; }
+}
+
+@media (max-width: 960px) {
+  .am-services__head { grid-template-columns: 1fr; gap: 20px; }
+  .am-services__layout { grid-template-columns: 1fr; }
+  .am-phone { position: relative; top: 0; min-height: auto; }
+}
+
+@media (max-width: 640px) {
+  .am-services { padding-left: 24px; padding-right: 24px; }
+}

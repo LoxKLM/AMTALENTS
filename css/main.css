@@ -1,0 +1,214 @@
+/* =========================================================
+   AM TALENTS — main.css
+   Variables CSS, reset, base, utilitaires partagés
+========================================================= */
+
+/* --- Tokens de design --- */
+:root {
+  /* Palette steel */
+  --am-steel-50:  #F2F7FB;
+  --am-steel-100: #E4EEF5;
+  --am-steel-200: #D0E0EC;
+  --am-steel-300: #B8D4E3;
+  --am-steel-400: #A8C3D4;
+  --am-steel-500: #8AADC2;
+  --am-steel-600: #5C8AA5;
+  --am-steel-700: #3E6884;
+
+  /* Palette orange */
+  --am-orange-50:  #FFF3EC;
+  --am-orange-100: #FFE0CD;
+  --am-orange-200: #FBC09D;
+  --am-orange-300: #F29A6A;
+  --am-orange-400: #E8703A;
+  --am-orange-500: #D25A24;
+  --am-orange-600: #B0441A;
+
+  /* Palette ink */
+  --am-ink-900: #0E1419;
+  --am-ink-800: #1B242B;
+  --am-ink-700: #2E3A43;
+  --am-ink-600: #4A5761;
+  --am-ink-500: #6B7781;
+  --am-ink-400: #8D98A1;
+  --am-ink-300: #B6BEC5;
+  --am-ink-200: #D8DDE2;
+  --am-ink-100: #ECEFF2;
+  --am-ink-50:  #F6F8FA;
+  --am-white:   #FFFFFF;
+  --am-paper:   #FAFAF7;
+
+  /* Couleurs sémantiques */
+  --am-bg:        var(--am-paper);
+  --am-bg-alt:    var(--am-white);
+  --am-bg-soft:   var(--am-steel-50);
+  --am-bg-invert: var(--am-ink-900);
+
+  --am-fg:        var(--am-ink-900);
+  --am-fg-muted:  var(--am-ink-600);
+  --am-fg-soft:   var(--am-ink-400);
+  --am-fg-invert: var(--am-white);
+
+  --am-border:        rgba(14, 20, 25, 0.08);
+  --am-border-strong: rgba(14, 20, 25, 0.16);
+
+  --am-accent:       var(--am-orange-400);
+  --am-accent-hover: var(--am-orange-500);
+  --am-primary:      var(--am-steel-400);
+  --am-primary-soft: var(--am-steel-100);
+
+  /* Typographies — NE JAMAIS MODIFIER */
+  --am-font-display: 'Space Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --am-font-body:    'Inter', ui-sans-serif, system-ui, sans-serif;
+  --am-font-serif:   'Instrument Serif', ui-serif, Georgia, serif;
+
+  /* Échelle typographique */
+  --am-text-xs:   12px;
+  --am-text-sm:   14px;
+  --am-text-base: 16px;
+  --am-text-md:   18px;
+  --am-text-lg:   22px;
+  --am-text-xl:   28px;
+  --am-text-2xl:  36px;
+  --am-text-3xl:  48px;
+  --am-text-4xl:  64px;
+
+  /* Interlignage */
+  --am-leading-tight:   1.02;
+  --am-leading-snug:    1.15;
+  --am-leading-normal:  1.45;
+  --am-leading-relaxed: 1.6;
+
+  /* Espacement des lettres */
+  --am-tracking-tight: -0.03em;
+  --am-tracking-mega:   0.22em;
+
+  /* Bordures arrondies */
+  --am-radius-sm:  8px;
+  --am-radius-md:  14px;
+  --am-radius-lg:  22px;
+  --am-radius-xl:  32px;
+  --am-radius-pill: 999px;
+
+  /* Ombres */
+  --am-shadow-xs: 0 1px 2px rgba(14,20,25,.05);
+  --am-shadow-sm: 0 2px 6px rgba(14,20,25,.06), 0 1px 2px rgba(14,20,25,.04);
+  --am-shadow-md: 0 10px 24px -8px rgba(14,20,25,.14), 0 2px 6px rgba(14,20,25,.05);
+  --am-shadow-lg: 0 28px 60px -20px rgba(14,20,25,.22), 0 6px 14px -6px rgba(14,20,25,.08);
+  --am-shadow-glow: 0 20px 50px -12px rgba(232,112,58,.35);
+
+  /* Courbes d'animation */
+  --am-ease-out:    cubic-bezier(0.22, 1, 0.36, 1);
+  --am-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --am-dur-fast:    160ms;
+  --am-dur-base:    280ms;
+}
+
+/* --- Reset --- */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--am-font-body);
+  color: var(--am-fg);
+  background: var(--am-bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Utilitaires partagés --- */
+
+.am-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--am-ink-500);
+  font-weight: 500;
+  font-family: var(--am-font-body);
+}
+
+.am-h2 {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: clamp(36px, 4.6vw, 68px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  color: var(--am-ink-900);
+  margin: 16px 0 0;
+  text-wrap: balance;
+}
+
+.am-serif-italic {
+  font-family: var(--am-font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* --- Boutons --- */
+
+.am-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--am-font-display);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  border-radius: 999px;
+  padding: 16px 26px;
+  transition: all var(--am-dur-base) var(--am-ease-out);
+}
+
+.am-btn--primary {
+  background: var(--am-orange-400);
+  color: #fff;
+  box-shadow: var(--am-shadow-glow);
+}
+
+.am-btn--primary:hover {
+  background: var(--am-orange-500);
+  transform: translateY(-2px);
+}
+
+.am-btn--outline {
+  background: transparent;
+  color: var(--am-ink-900);
+  border: 1.5px solid var(--am-ink-900);
+}
+
+.am-btn--outline:hover {
+  background: var(--am-ink-900);
+  color: var(--am-paper);
+}
+
+.am-btn--ghost {
+  background: transparent;
+  color: var(--am-ink-900);
+  padding: 14px 4px;
+}
+
+.am-btn--ghost:hover {
+  color: var(--am-orange-400);
+}
+
+/* --- Tag --- */
+
+.am-tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: var(--am-steel-700);
+  background: var(--am-steel-100);
+  border-radius: 999px;
+  padding: 4px 12px;
+}

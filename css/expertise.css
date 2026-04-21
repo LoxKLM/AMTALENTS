@@ -1,0 +1,83 @@
+/* =========================================================
+   AM TALENTS — expertise.css
+   Section "On ne vend pas du marketing" — pilliers éditoriaux
+========================================================= */
+
+.am-expertise {
+  background: linear-gradient(180deg, var(--am-steel-50) 0%, var(--am-steel-200) 100%);
+  color: var(--am-ink-900);
+  padding: 140px 64px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Eyebrow en couleur steel dans ce contexte */
+.am-expertise .am-eyebrow {
+  color: var(--am-steel-300);
+}
+
+/* Texte en italique orange dans le titre de section */
+.am-expertise .am-h2 .am-serif-italic {
+  color: var(--am-orange-400);
+}
+
+.am-expertise__head {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+/* --- Pilliers --- */
+
+.am-expertise__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  margin-bottom: 100px;
+  border-top: 1px solid rgba(14,20,25,0.1);
+  padding-top: 48px;
+}
+
+.am-pillar__k {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--am-ink-900);
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.am-pillar__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--am-orange-400);
+  flex-shrink: 0;
+}
+
+.am-pillar__d {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--am-ink-700);
+  margin: 0;
+  max-width: 320px;
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 1024px) {
+  .am-expertise { padding: 100px 40px; }
+}
+
+@media (max-width: 960px) {
+  .am-expertise__head { grid-template-columns: 1fr; gap: 20px; }
+  .am-expertise__pillars { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .am-expertise { padding-left: 24px; padding-right: 24px; }
+}

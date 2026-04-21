@@ -1,0 +1,54 @@
+/* =========================================================
+   AM TALENTS — animations.css
+   Toutes les keyframes et transitions CSS du site
+========================================================= */
+
+/* --- Pulsation orange (eyebrow hero) --- */
+@keyframes am-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(232,112,58,0.6); }
+  70%  { box-shadow: 0 0 0 10px rgba(232,112,58,0); }
+  100% { box-shadow: 0 0 0 0 rgba(232,112,58,0); }
+}
+
+/* --- Flottement des chips --- */
+@keyframes am-float {
+  0%, 100% { translate: 0 0; }
+  50%       { translate: 0 -8px; }
+}
+
+/* --- Feed téléphone (section services) --- */
+@keyframes am-scroll-feed {
+  0%   { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* =========================================================
+   Animations d'entrée hero
+========================================================= */
+
+@keyframes am-fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes am-fade-in-down {
+  from { opacity: 0; transform: translateY(-16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes am-slide-in-right {
+  from { opacity: 0; transform: translateX(48px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* --- Barre de scroll verticale animée --- */
+@keyframes am-slide-down {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(250%); }
+}
+
+/* --- Point live vert sur les chips (scale + opacity) --- */
+@keyframes am-live-pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%       { transform: scale(1.4); opacity: 0.4; }
+}
