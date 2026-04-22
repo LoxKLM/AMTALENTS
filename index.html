@@ -61,9 +61,21 @@
   <link rel="stylesheet" href="./css/stats.css">
   <link rel="stylesheet" href="./css/portfolio.css">
   <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/loader.css">
 </head>
 
 <body>
+
+  <!-- LOADER — premier élément du body, masqué après 2.2s par JS -->
+  <div id="loader" class="loader">
+    <div class="loader__content">
+      <div class="loader__logo">AM Talents<span class="loader__dot">●</span></div>
+      <p class="loader__tagline">Marseille a mille visages. On fait briller le vôtre.</p>
+      <div class="loader__progress">
+        <div class="loader__progress-fill"></div>
+      </div>
+    </div>
+  </div>
 
   <!-- NAV -->
   <nav class="am-nav" id="am-nav" aria-label="Navigation principale">
@@ -95,16 +107,28 @@
       <div class="am-hero__overlay-side" aria-hidden="true"></div>
       <div class="am-hero__overlay-bottom" aria-hidden="true"></div>
 
-      <!-- Badge glassmorphism haut-gauche -->
-      <div class="am-hero__eyebrow" data-hero-anim="fade-down" style="animation-delay:.3s">
-        <span class="am-hero__pulse" aria-hidden="true"></span>
-        Agence digitale · Marseille
-      </div>
+      <!-- Bloc gauche : badge + titre + pills -->
+      <div class="am-hero__left">
 
-      <!-- Titre H1 — colonne gauche, centré verticalement -->
-      <h1 class="am-hero__title" id="hero-title" data-hero-anim="fade-up" style="animation-delay:.1s">
-        Du contenu qui vous rend <span class="am-hero__italic">visibles</span><span class="am-hero__dot">.</span>
-      </h1>
+        <!-- Badge glassmorphism au-dessus du H1 -->
+        <div class="am-hero__eyebrow" data-hero-anim="fade-down" style="animation-delay:.3s">
+          <span class="am-hero__pulse" aria-hidden="true"></span>
+          Agence digitale · Marseille
+        </div>
+
+        <!-- Titre H1 -->
+        <h1 class="am-hero__title" id="hero-title" data-hero-anim="fade-up" style="animation-delay:.1s">
+          Du contenu qui vous rend <span class="am-hero__italic">visibles</span><span class="am-hero__dot">.</span>
+        </h1>
+
+        <!-- Pills de réassurance -->
+        <div class="hero__pills" data-hero-anim="fade-up" style="animation-delay:.55s">
+          <span class="hero__pill">✦ 100% Marseillais</span>
+          <span class="hero__pill">✦ On se déplace chez vous</span>
+          <span class="hero__pill">✦ Sans engagement</span>
+        </div>
+
+      </div>
 
       <!-- Méta — colonne droite, centrée verticalement -->
       <div class="am-hero__meta" data-hero-anim="fade-up" style="animation-delay:.4s">
