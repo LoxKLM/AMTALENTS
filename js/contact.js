@@ -1,77 +1,63 @@
 /* =========================================================
    AM TALENTS — contact.js
-   Formulaire de contact via EmailJS
-   SDK chargé via <script> dans index.html
+   Gestion formulaire EmailJS
 ========================================================= */
 
-/* [À CONFIGURER] — Remplacer avant la mise en production */
-const EMAILJS_PUBLIC_KEY  = 'VOTRE_PUBLIC_KEY';   /* [À CONFIGURER] */
-const EMAILJS_SERVICE_ID  = 'VOTRE_SERVICE_ID';   /* [À CONFIGURER] */
-const EMAILJS_TEMPLATE_ID = 'VOTRE_TEMPLATE_ID';  /* [À CONFIGURER] */
+(function() {
+  emailjs.init({
+    publicKey: '-dE1barNKWhgbdBjH',
+  });
+})();
 
 export function initContact() {
-  const form        = document.getElementById('contact-form');
-  const formFields  = document.getElementById('form-fields');
-  const formSent    = document.getElementById('form-sent');
-  const formError   = document.getElementById('form-error');
-  const submitBtn   = form?.querySelector('.am-contact__submit');
-
+  const form = document.getElementById('contact-form');
   if (!form) return;
 
-  /* Initialisation EmailJS */
-  if (typeof emailjs !== 'undefined') {
-    emailjs.init(EMAILJS_PUBLIC_KEY);
-  }
-
-  form.addEventListener('submit', async (e) => {
+  form.addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    /* Protection honeypot anti-spam */
-    const honeypot = form.querySelector('input[name="website"]');
-    if (honeypot?.value) return;
+    /* Honeypot anti-spam */
+    const honeypot = form.querySelector('[name="website"]');
+    if (honeypot && honeypot.value) return;
 
-    setLoading(true);
-    hideError();
+    const btn = form.querySelector('button[type="submit"]');
+    const errorEl = document.getElementById('form-error');
+    const sentEl = document.getElementById('form-sent');
 
-    const params = {
-      nom:      form.querySelector('[name="nom"]')?.value,
-      email:    form.querySelector('[name="email"]')?.value,
-      activite: form.querySelector('[name="activite"]')?.value,
-      message:  form.querySelector('[name="message"]')?.value,
+    /* État loading */
+    btn.disabled = true;
+    btn.textContent = 'Envoi en cours...';
+    if (errorEl) errorEl.textContent = '';
+
+    const templateParams = {
+      nom:      form.querySelector('[name="nom"]')?.value || '',
+      email:    form.querySelector('[name="email"]')?.value || '',
+      activite: form.querySelector('[name="activite"]')?.value || '',
+      message:  form.querySelector('[name="message"]')?.value || '',
     };
 
     try {
-      if (typeof emailjs !== 'undefined') {
-        await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, params);
+      await emailjs.send(
+        'service_h4qnz0w',
+        'template_lvkq9cj',
+        templateParams
+      );
+
+      /* Succès — afficher confirmation */
+      if (sentEl) {
+        document.getElementById('form-fields')?.style
+          && (document.getElementById('form-fields').style.display = 'none');
+        sentEl.style.display = 'block';
       }
-      showSuccess();
-    } catch {
-      showError("Une erreur est survenue. Merci de réessayer ou d'écrire à hello@amtalents.fr");
-    } finally {
-      setLoading(false);
+      form.reset();
+
+    } catch (error) {
+      console.error('EmailJS error:', JSON.stringify(error));
+      if (errorEl) {
+        errorEl.textContent = 'Une erreur est survenue. Réessayez ou contactez-nous directement.';
+      }
+      btn.disabled = false;
+      btn.textContent = 'Envoyer →';
     }
   });
-
-  function setLoading(active) {
-    if (!submitBtn) return;
-    submitBtn.disabled = active;
-    form.classList.toggle('am-contact__form--loading', active);
-    submitBtn.textContent = active ? 'Envoi en cours…' : 'Envoyer →';
-  }
-
-  function showSuccess() {
-    formFields.style.display = 'none';
-    formSent.style.display   = 'block';
-  }
-
-  function showError(msg) {
-    if (!formError) return;
-    formError.textContent    = msg;
-    formError.style.display  = 'block';
-  }
-
-  function hideError() {
-    if (!formError) return;
-    formError.style.display = 'none';
-  }
 }
