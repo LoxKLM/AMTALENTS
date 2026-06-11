@@ -1,4 +1,4 @@
-# AM Talents — CLAUDE.md
+    # AM Talents — CLAUDE.md
 
 Site vitrine de l'agence digitale AM Talents, basée à Marseille.
 Stack : HTML / CSS / JS vanilla, zéro framework, zéro build tool.

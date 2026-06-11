@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>Contact — AM Talents | Démarrons un projet ensemble</title>
+  <meta name="description" content="Contactez AM Talents pour démarrer votre projet digital. On vous répond sous 24h. Basés à Marseille, on se déplace chez vous.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://amtalents.fr/contact.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://amtalents.fr/contact.html">
+  <meta property="og:title"       content="Contact — AM Talents | Démarrons un projet ensemble">
+  <meta property="og:description" content="On vous répond sous 24h. Basés à Marseille, on se déplace chez vous.">
+  <meta property="og:image"       content="https://amtalents.fr/og-image.jpg">
+  <meta property="og:locale"      content="fr_FR">
+  <meta property="og:site_name"   content="AM Talents">
+
+  <!-- Polices Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+
+  <!-- Feuilles de style -->
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/animations.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/contact.css">
+  <link rel="stylesheet" href="./css/pages.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="am-nav am-nav--static" id="am-nav" aria-label="Navigation principale">
+    <a href="./index.html" class="am-nav__brand" aria-label="AM Talents — accueil">
+      <img src="./assets/logo_am.png" alt="AM Talents" class="am-nav__logo-img">
+      <span class="am-nav__word">Talents</span>
+      <span class="am-nav__dot" aria-hidden="true"></span>
+    </a>
+    <div class="am-nav__links">
+      <a href="./services.html">Services</a>
+      <a href="./expertise.html">Expertise</a>
+      <a href="./projets.html">Projets</a>
+      <a href="./agence.html">Agence</a>
+    </div>
+    <a href="./contact.html" class="am-nav__cta">Prendre contact →</a>
+  </nav>
+
+  <main>
+
+    <!-- HERO SECONDAIRE -->
+    <section class="am-page-hero am-page-hero--short" data-watermark="Contact" aria-labelledby="contact-hero-title">
+      <span class="am-page-hero__badge">— Prendre contact</span>
+      <h1 class="am-page-hero__title" id="contact-hero-title">
+        On prend un café ?
+      </h1>
+      <p class="am-page-hero__sub">
+        Dites-nous ce que vous voulez faire.
+        Pas de blabla, pas de devis à tiroirs.
+      </p>
+    </section>
+
+    <!-- FORMULAIRE — 2 colonnes -->
+    <section class="am-contact-page" aria-labelledby="contact-form-title">
+
+      <!-- Colonne gauche : infos -->
+      <div class="am-contact-page__left">
+        <span class="am-eyebrow">— On est là</span>
+        <h2 class="am-contact-page__title" id="contact-form-title">
+          Écrivez-<br>nous<span class="am-contact-page__title-q">.</span>
+        </h2>
+        <p class="am-contact-page__sub">
+          On répond sous 24h. On se déplace chez vous
+          pour mieux comprendre votre univers.
+        </p>
+        <div class="am-contact-page__meta">
+          <div>
+            <div class="am-contact-page__lbl">Adresse</div>
+            <div>12 rue Sainte<br>13001 Marseille</div>
+          </div>
+          <div>
+            <div class="am-contact-page__lbl">Email</div>
+            <div>hello@amtalents.fr</div>
+          </div>
+          <div>
+            <div class="am-contact-page__lbl">Instagram</div>
+            <div>@amtalents.mrs</div>
+          </div>
+        </div>
+        <p class="am-contact-page__human">
+          On se déplace chez vous pour mieux comprendre votre univers.
+          Un café, une conversation, et on sait déjà comment vous aider.
+        </p>
+      </div>
+
+      <!-- Colonne droite : formulaire -->
+      <form class="am-contact-page__form am-contact__form" id="contact-form" novalidate>
+        <div id="form-fields">
+          <div class="am-field">
+            <label for="f-nom">Nom</label>
+            <input id="f-nom" name="nom" required placeholder="Marie Dupont">
+          </div>
+          <div class="am-field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" required type="email" placeholder="marie@example.com">
+          </div>
+          <div class="am-field">
+            <label for="f-activite">Activité</label>
+            <input id="f-activite" name="activite" placeholder="Restaurant · Institut · Traiteur · Autre">
+          </div>
+          <div class="am-field">
+            <label for="f-message">Message</label>
+            <textarea id="f-message" name="message" rows="4" placeholder="Parlez-nous de votre projet…"></textarea>
+          </div>
+          <!-- Honeypot anti-spam — ne pas supprimer -->
+          <div class="am-field am-field--honeypot" aria-hidden="true">
+            <label for="f-website">Site web</label>
+            <input id="f-website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+          <div id="form-error" class="am-contact__error" role="alert"></div>
+          <button type="submit" class="am-btn am-btn--primary am-contact__submit">
+            <span class="am-contact__spinner" aria-hidden="true"></span>
+            Envoyer →
+          </button>
+        </div>
+        <div id="form-sent" class="am-contact__sent" role="status">
+          <div class="am-contact__sent-icon" aria-hidden="true"></div>
+          <h3>Message envoyé.</h3>
+          <p>On vous répond sous 24h. À très vite.</p>
+        </div>
+      </form>
+
+    </section>
+
+    <!-- RASSURANCE -->
+    <div class="am-contact-page__reassurance" aria-label="Garanties">
+      <span class="am-pill">✦ 100% Marseillais</span>
+      <span class="am-pill">✦ On se déplace chez vous</span>
+      <span class="am-pill">✦ Sans engagement</span>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="am-footer" aria-label="Pied de page AM Talents">
+    <div class="am-footer__top">
+      <div class="am-footer__brand">
+        <img src="./assets/logo_am.png" alt="AM Talents" class="am-footer__logo-img">
+        <p>Agence digitale marseillaise — contenus, sites, SEO local.</p>
+      </div>
+      <div class="am-footer__cols">
+        <div>
+          <div class="am-footer__h">Services</div>
+          <a href="./services.html">Social media</a>
+          <a href="./services.html">Photo &amp; vidéo</a>
+          <a href="./services.html">Sites web</a>
+          <a href="./services.html">SEO local</a>
+        </div>
+        <div>
+          <div class="am-footer__h">Agence</div>
+          <a href="./agence.html">Notre équipe</a>
+          <a href="./expertise.html">Notre approche</a>
+          <a href="./projets.html">Nos projets</a>
+        </div>
+        <div>
+          <div class="am-footer__h">Contact</div>
+          <a href="mailto:hello@amtalents.fr">hello@amtalents.fr</a>
+          <a href="https://www.instagram.com/amtalents.mrs">@amtalents.mrs</a>
+          <a href="./contact.html">12 rue Sainte, Marseille</a>
+        </div>
+      </div>
+    </div>
+    <div class="am-footer__bottom">
+      <span>© 2026 AM Talents — Marseille</span>
+      <span>Mentions légales · Politique de confidentialité</span>
+    </div>
+  </footer>
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- JS -->
+  <script type="module" src="./js/main.js"></script>
+
+</body>
+</html>

@@ -204,11 +204,12 @@ body {
 .am-tag {
   display: inline-flex;
   align-items: center;
-  font-size: 11px;
+  background: rgba(26,26,26,0.06);
+  color: #1a1a1a;
+  border: 1px solid rgba(26,26,26,0.12);
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
-  color: var(--am-steel-700);
-  background: var(--am-steel-100);
-  border-radius: 999px;
-  padding: 4px 12px;
+  padding: 0.3rem 0.75rem;
+  border-radius: 99px;
+  letter-spacing: 0.02em;
 }

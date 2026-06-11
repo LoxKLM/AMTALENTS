@@ -23,9 +23,9 @@
   pointer-events: none;
 }
 
-/* Eyebrow orange dans ce contexte */
+/* Eyebrow lisible sur fond steel clair */
 .am-contact .am-eyebrow {
-  color: var(--am-orange-300);
+  color: rgba(26,26,26,0.6);
 }
 
 /* --- Colonne gauche --- */

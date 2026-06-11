@@ -62,6 +62,7 @@
   <link rel="stylesheet" href="./css/portfolio.css">
   <link rel="stylesheet" href="./css/contact.css">
   <link rel="stylesheet" href="./css/loader.css">
+  <link rel="stylesheet" href="./css/pages.css">
 </head>
 
 <body>
@@ -69,7 +70,7 @@
   <!-- LOADER — premier élément du body, masqué après 2.2s par JS -->
   <div id="loader" class="loader">
     <div class="loader__content">
-      <div class="loader__logo">AM Talents<span class="loader__dot">●</span></div>
+      <img src="./assets/logo_am.png" alt="AM Talents" class="loader__logo-img">
       <p class="loader__tagline">Marseille a mille visages. On fait briller le vôtre.</p>
       <div class="loader__progress">
         <div class="loader__progress-fill"></div>
@@ -79,18 +80,18 @@
 
   <!-- NAV -->
   <nav class="am-nav" id="am-nav" aria-label="Navigation principale">
-    <a href="#" class="am-nav__brand" aria-label="AM Talents — accueil">
-      <div class="am-nav__mark" aria-hidden="true">AM</div>
+    <a href="./index.html" class="am-nav__brand" aria-label="AM Talents — accueil">
+      <img src="./assets/logo_am.png" alt="AM Talents" class="am-nav__logo-img">
       <span class="am-nav__word">Talents</span>
       <span class="am-nav__dot" aria-hidden="true"></span>
     </a>
     <div class="am-nav__links">
-      <a href="#services">Services</a>
-      <a href="#expertise">Expertise</a>
-      <a href="#projets">Projets</a>
-      <a href="#agence">Agence</a>
+      <a href="./services.html">Services</a>
+      <a href="./expertise.html">Expertise</a>
+      <a href="./projets.html">Projets</a>
+      <a href="./agence.html">Agence</a>
     </div>
-    <a href="#contact" class="am-nav__cta">Prendre contact →</a>
+    <a href="./contact.html" class="am-nav__cta">Prendre contact →</a>
   </nav>
 
   <main>
@@ -100,7 +101,7 @@
 
       <!-- Fond vidéo (fondu à l'entrée via JS) -->
       <video class="am-hero__video-bg" autoplay muted loop playsinline aria-hidden="true">
-        <source src="./assets/amtalents-headervid.webm" type="video/webm">
+        <source src="./assets/new_vid.mp4" type="video/mp4">
       </video>
 
       <!-- Double overlay directionnel : côté (gauche→droite) + bas (bas→haut) -->
@@ -137,8 +138,8 @@
           Contenus qui performent, sites qui convertissent, équipe qui répond.
         </p>
         <div class="am-hero__actions">
-          <a href="#contact" class="am-btn am-btn--primary">Démarrer un projet →</a>
-          <a href="#projets" class="am-btn am-btn--ghost">Voir les projets</a>
+          <a href="./contact.html" class="am-btn am-btn--primary">Démarrer un projet →</a>
+          <a href="./projets.html" class="am-btn am-btn--ghost">Voir les projets</a>
         </div>
       </div>
 
@@ -146,18 +147,10 @@
       <div class="am-hero__chip am-hero__chip--1" data-hero-anim="slide-right" style="animation-delay:.8s" aria-hidden="true">
         <span class="am-hero__live-dot"></span>
         <div>
-          <div class="am-hero__chip-t">+184%</div>
-          <div class="am-hero__chip-s">engagement · Le Bistrot Vieux-Port</div>
+          <div class="am-hero__chip-t">On tourne</div>
+          <div class="am-hero__chip-s">à Marseille</div>
         </div>
       </div>
-      <div class="am-hero__chip am-hero__chip--2" data-hero-anim="slide-right" style="animation-delay:1.2s" aria-hidden="true">
-        <span class="am-hero__live-dot"></span>
-        <div>
-          <div class="am-hero__chip-t">23</div>
-          <div class="am-hero__chip-s">clients actifs à Marseille</div>
-        </div>
-      </div>
-
       <!-- Indicateur de scroll vertical -->
       <div class="am-hero__scroll" aria-hidden="true">
         <span class="am-hero__scroll-label">Scroll</span>
@@ -175,7 +168,7 @@
         </h2>
         <p class="am-services__intro">
           De la première story au site en ligne, on couvre toute la chaîne.
-          Un interlocuteur, un calendrier, des livrables clairs.
+          Une vraie personne, un calendrier, des livrables clairs.
         </p>
       </div>
 
@@ -193,126 +186,279 @@
               <div class="am-phone__reel">
                 <div class="am-phone__track" id="phone-track">
 
-                  <!-- Posts × 4 dupliqués pour le défilement infini -->
+                  <!-- Katzav Délicatessen -->
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--bistrot"></div>
+                      <div class="am-phone__avatar"><img src="./assets/katzav_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Le Bistrot Vieux-Port</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Katzav Délicatessen</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--bistrot">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/KATZAV.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Menu du jour · 47 j'aime</div>
+                  </div>
+
+                  <!-- Mademoiselle Bien-Être -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/mademoisellebienetre_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Mademoiselle Bien-Être</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/MADEMOISELLEBIENETRE.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Le Murano -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/lemurano_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Le Murano</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/LEMURANO.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Diamanté K -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/diamantek_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Diamanté K</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/DIAMANTEK.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Pharmacie Paradis -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/pharmacieparadis_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Pharmacie Paradis</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/PHARMACIEPARADIS.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Domaine Robert -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/domainerobert_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Domaine Robert</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/DOMAINROBERT.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- L'Evidence -->
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/levidence_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">L'Evidence</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/LEVIDENCE.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Duplication pour défilement sans rupture -->
+
+                  <div class="am-phone__post">
+                    <div class="am-phone__post-head">
+                      <div class="am-phone__avatar"><img src="./assets/katzav_logo.png" alt="" aria-hidden="true"></div>
+                      <div>
+                        <div class="am-phone__user">Katzav Délicatessen</div>
+                        <div class="am-phone__place">Marseille</div>
+                      </div>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
+                    </div>
+                    <div class="am-phone__media"><img src="./assets/KATZAV.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
+                    </div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--lumiere"></div>
+                      <div class="am-phone__avatar"><img src="./assets/mademoisellebienetre_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Institut Lumière</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Mademoiselle Bien-Être</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--lumiere">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/MADEMOISELLEBIENETRE.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Nouvelle carte · 31 j'aime</div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--calanques"></div>
+                      <div class="am-phone__avatar"><img src="./assets/lemurano_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Traiteur Calanques</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Le Murano</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--calanques">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/LEMURANO.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Mariage · 128 j'aime</div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--pharo"></div>
+                      <div class="am-phone__avatar"><img src="./assets/diamantek_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Café Pharo</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Diamanté K</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--pharo">
-                      <span class="am-phone__badge">AM</span>
-                    </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Terrasse · 89 j'aime</div>
-                  </div>
-
-                  <!-- Duplication pour le défilement sans rupture -->
-                  <div class="am-phone__post">
-                    <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--bistrot"></div>
-                      <div>
-                        <div class="am-phone__user">Le Bistrot Vieux-Port</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                    <div class="am-phone__media"><img src="./assets/DIAMANTEK.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--bistrot">
-                      <span class="am-phone__badge">AM</span>
-                    </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Menu du jour · 47 j'aime</div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--lumiere"></div>
+                      <div class="am-phone__avatar"><img src="./assets/pharmacieparadis_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Institut Lumière</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Pharmacie Paradis</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--lumiere">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/PHARMACIEPARADIS.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Nouvelle carte · 31 j'aime</div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--calanques"></div>
+                      <div class="am-phone__avatar"><img src="./assets/domainerobert_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Traiteur Calanques</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">Domaine Robert</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--calanques">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/DOMAINROBERT.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Mariage · 128 j'aime</div>
                   </div>
 
                   <div class="am-phone__post">
                     <div class="am-phone__post-head">
-                      <div class="am-phone__avatar am-phone__avatar--pharo"></div>
+                      <div class="am-phone__avatar"><img src="./assets/levidence_logo.png" alt="" aria-hidden="true"></div>
                       <div>
-                        <div class="am-phone__user">Café Pharo</div>
-                        <div class="am-phone__place">Marseille · sponsorisé</div>
+                        <div class="am-phone__user">L'Evidence</div>
+                        <div class="am-phone__place">Marseille</div>
                       </div>
-                      <span class="am-phone__menu-dot">···</span>
+                      <span class="am-phone__live" aria-hidden="true">●</span>
                     </div>
-                    <div class="am-phone__media am-phone__media--pharo">
-                      <span class="am-phone__badge">AM</span>
+                    <div class="am-phone__media"><img src="./assets/LEVIDENCE.png" alt="" aria-hidden="true"></div>
+                    <div class="am-phone__footer">
+                      <div class="am-phone__actions">
+                        <span class="am-phone__heart">♥</span>
+                        <span class="am-phone__action-icon">◯</span>
+                        <span class="am-phone__action-icon">↗</span>
+                      </div>
                     </div>
-                    <div class="am-phone__caption"><span class="am-phone__heart">♥</span> Terrasse · 89 j'aime</div>
                   </div>
 
                 </div>
@@ -323,26 +469,27 @@
           <div class="am-phone__float am-phone__float--1">
             <span class="am-phone__float-dot am-phone__float-dot--orange"></span>
             <div>
-              <div class="am-phone__float-t">+184%</div>
-              <div class="am-phone__float-s">engagement</div>
+              <div class="am-phone__float-t">On tourne</div>
+              <div class="am-phone__float-s">à Marseille</div>
             </div>
           </div>
           <div class="am-phone__float am-phone__float--2">
             <span class="am-phone__float-dot am-phone__float-dot--steel"></span>
             <div>
-              <div class="am-phone__float-t">12j</div>
-              <div class="am-phone__float-s">livraison</div>
+              <div class="am-phone__float-t">Chez vous</div>
+              <div class="am-phone__float-s">on se déplace</div>
             </div>
           </div>
         </div>
 
         <!-- Liste des services -->
         <div class="am-services__list">
+          <a href="./services.html" class="am-service-row__link">
           <article class="am-service-row">
             <div class="am-service-row__n">01</div>
             <div>
               <h3 class="am-service-row__t">Social media</h3>
-              <p class="am-service-row__d">Planning, contenus, community management. On prend le relais, vous restez concentré sur votre métier.</p>
+              <p class="am-service-row__d">Nous gérons vos réseaux sociaux avec une stratégie humaine, moderne et adaptée à votre image. Création de contenu, publications, stories, engagement et développement de votre communauté : notre mission est de faire vivre votre marque au quotidien et de la rendre visible auprès des bonnes personnes.</p>
               <div class="am-service-row__tags">
                 <span class="am-tag">Instagram</span>
                 <span class="am-tag">TikTok</span>
@@ -351,11 +498,13 @@
             </div>
             <span class="am-service-row__arrow" aria-hidden="true">→</span>
           </article>
+          </a>
+          <a href="./services.html" class="am-service-row__link">
           <article class="am-service-row">
             <div class="am-service-row__n">02</div>
             <div>
               <h3 class="am-service-row__t">Photo &amp; vidéo</h3>
-              <p class="am-service-row__d">Shootings sur place, montage rapide, formats verticaux pensés pour mobile.</p>
+              <p class="am-service-row__d">Photos, vidéos, réels, shootings produits ou lifestyle : nous créons du contenu moderne et impactant pour mettre votre entreprise en valeur. Nos contenus sont réalisés à l'appareil photo professionnel, au drone ou à l'iPhone dernière génération afin de s'adapter parfaitement aux besoins de chaque projet et aux codes actuels des réseaux sociaux.</p>
               <div class="am-service-row__tags">
                 <span class="am-tag">Shooting</span>
                 <span class="am-tag">Montage</span>
@@ -364,11 +513,13 @@
             </div>
             <span class="am-service-row__arrow" aria-hidden="true">→</span>
           </article>
+          </a>
+          <a href="./services.html" class="am-service-row__link">
           <article class="am-service-row">
             <div class="am-service-row__n">03</div>
             <div>
               <h3 class="am-service-row__t">Sites web</h3>
-              <p class="am-service-row__d">Des sites qui convertissent. Rapides, sobres, écrits pour vos clients — pas pour Google seul.</p>
+              <p class="am-service-row__d">Nous créons des sites internet modernes, rapides et adaptés à votre activité : site vitrine, e-commerce ou site sur mesure. Notre objectif : offrir à votre entreprise une présence digitale professionnelle et efficace.</p>
               <div class="am-service-row__tags">
                 <span class="am-tag">Design</span>
                 <span class="am-tag">Dev</span>
@@ -377,6 +528,8 @@
             </div>
             <span class="am-service-row__arrow" aria-hidden="true">→</span>
           </article>
+          </a>
+          <a href="./services.html" class="am-service-row__link">
           <article class="am-service-row">
             <div class="am-service-row__n">04</div>
             <div>
@@ -390,8 +543,13 @@
             </div>
             <span class="am-service-row__arrow" aria-hidden="true">→</span>
           </article>
+          </a>
         </div>
 
+      </div>
+
+      <div class="am-portfolio__cta">
+        <a href="./services.html" class="am-btn am-btn--outline">Découvrir nos services →</a>
       </div>
     </section>
 
@@ -412,31 +570,29 @@
           <p class="am-pillar__d">On connaît Marseille, ses quartiers, ses codes. On filme chez vous, pas en studio.</p>
         </div>
         <div class="am-pillar">
-          <div class="am-pillar__k"><span class="am-pillar__dot" aria-hidden="true"></span>Vite</div>
-          <p class="am-pillar__d">Livraison en 10 jours sur la plupart des projets. Pas de roadmap à six mois.</p>
+          <div class="am-pillar__k"><span class="am-pillar__dot" aria-hidden="true"></span>Proches</div>
+          <p class="am-pillar__d">On connaît vos contraintes. On s'adapte à votre rythme, pas l'inverse.</p>
         </div>
         <div class="am-pillar">
           <div class="am-pillar__k"><span class="am-pillar__dot" aria-hidden="true"></span>Humain</div>
-          <p class="am-pillar__d">Une équipe, un interlocuteur. Vous savez à qui vous parlez. Vous savez pourquoi.</p>
+          <p class="am-pillar__d">Une équipe, votre contact. Vous savez à qui vous parlez. Vous savez pourquoi.</p>
         </div>
       </div>
 
-      <div class="am-expertise__stats" aria-label="Chiffres clés">
-        <div class="am-stat">
-          <div class="am-stat__n">23</div>
-          <div class="am-stat__l">clients actifs</div>
+      <div class="am-engagements">
+        <div class="am-engagement">
+          <div class="am-engagement__title">On vient chez vous</div>
+          <div class="am-engagement__sub">à Marseille et alentours</div>
         </div>
-        <div class="am-stat">
-          <div class="am-stat__n">180+</div>
-          <div class="am-stat__l">contenus / mois</div>
+        <div class="am-engagement__sep" aria-hidden="true"></div>
+        <div class="am-engagement">
+          <div class="am-engagement__title">Votre contact direct</div>
+          <div class="am-engagement__sub">toujours la même personne</div>
         </div>
-        <div class="am-stat">
-          <div class="am-stat__n">10j</div>
-          <div class="am-stat__l">délai moyen</div>
-        </div>
-        <div class="am-stat">
-          <div class="am-stat__n">4.9</div>
-          <div class="am-stat__l">note Google</div>
+        <div class="am-engagement__sep" aria-hidden="true"></div>
+        <div class="am-engagement">
+          <div class="am-engagement__title">Sous 24h</div>
+          <div class="am-engagement__sub">on vous répond</div>
         </div>
       </div>
     </section>
@@ -447,152 +603,82 @@
         <span class="am-eyebrow">— Sélection 2026</span>
         <h2 class="am-h2" id="portfolio-title">
           Commerces marseillais,<br>
-          <span class="am-serif-italic">résultats mesurables</span>.
+          <span class="am-serif-italic">histoires vraies</span>.
         </h2>
       </div>
 
       <div class="am-portfolio__grid">
         <article class="am-project">
-          <div class="am-project__cover am-project__cover--bistrot">
-            <div class="am-project__metric">+184% engagement</div>
+          <div class="am-project__cover am-project__cover--katzav">
             <div class="am-project__num" aria-hidden="true">01</div>
           </div>
           <div class="am-project__info">
-            <div class="am-project__cat">Restaurant · Instagram + Site</div>
-            <h3 class="am-project__t">Le Bistrot du Vieux-Port</h3>
+            <div class="am-project__cat">Sandwicherie gourmet · Marseille</div>
+            <h3 class="am-project__t">Katzav Délicatessen</h3>
+            <div class="am-project__links">
+              <a href="https://www.instagram.com/katzav_delicatessen/" target="_blank" rel="noopener" class="am-project__link am-project__link--ig">↗ Instagram</a>
+              <!-- URL à confirmer : katzav.fr ou katzav-delicatessen.fr -->
+              <a href="#" target="_blank" rel="noopener" class="am-project__link am-project__link--web">↗ Site web</a>
+            </div>
           </div>
         </article>
         <article class="am-project">
-          <div class="am-project__cover am-project__cover--lumiere">
-            <div class="am-project__metric">1ère page Google</div>
+          <div class="am-project__cover am-project__cover--domaine">
             <div class="am-project__num" aria-hidden="true">02</div>
           </div>
           <div class="am-project__info">
-            <div class="am-project__cat">Institut de beauté · SEO local</div>
-            <h3 class="am-project__t">Institut Lumière</h3>
-          </div>
-        </article>
-        <article class="am-project">
-          <div class="am-project__cover am-project__cover--calanques">
-            <div class="am-project__metric">+42% demandes</div>
-            <div class="am-project__num" aria-hidden="true">03</div>
-          </div>
-          <div class="am-project__info">
-            <div class="am-project__cat">Traiteur · Shooting + Reels</div>
-            <h3 class="am-project__t">Traiteur Calanques</h3>
-          </div>
-        </article>
-        <article class="am-project">
-          <div class="am-project__cover am-project__cover--pharo">
-            <div class="am-project__metric">3k abonnés en 90j</div>
-            <div class="am-project__num" aria-hidden="true">04</div>
-          </div>
-          <div class="am-project__info">
-            <div class="am-project__cat">Café · Site + community</div>
-            <h3 class="am-project__t">Café Pharo</h3>
+            <div class="am-project__cat">Domaine événementiel &amp; hôtel · Rognes</div>
+            <h3 class="am-project__t">Domaine Robert</h3>
+            <div class="am-project__links">
+              <a href="https://www.instagram.com/domaine_robert/" target="_blank" rel="noopener" class="am-project__link am-project__link--ig">↗ Instagram</a>
+            </div>
           </div>
         </article>
       </div>
 
       <div class="am-portfolio__cta">
-        <a href="#contact" class="am-btn am-btn--outline">Voir tous les projets →</a>
+        <a href="./projets.html" class="am-btn am-btn--outline">Voir tous les projets →</a>
       </div>
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="am-contact" aria-labelledby="contact-title">
-      <div class="am-contact__left">
-        <span class="am-eyebrow">— Prendre contact</span>
-        <h2 class="am-contact__title" id="contact-title">
-          On prend<br>
-          un café <span class="am-contact__q">?</span>
-        </h2>
-        <p class="am-contact__sub">
-          Dites-nous ce que vous voulez faire. On vous répond sous 24h,
-          souvent plus vite. Pas de blabla, pas de devis à tiroirs.
-        </p>
-        <div class="am-contact__meta">
-          <div>
-            <div class="am-contact__lbl">Adresse</div>
-            <div>12 rue Sainte<br>13001 Marseille</div>
-          </div>
-          <div>
-            <div class="am-contact__lbl">Email</div>
-            <div>hello@amtalents.fr</div>
-          </div>
-          <div>
-            <div class="am-contact__lbl">Instagram</div>
-            <div>@amtalents.mrs</div>
-          </div>
-        </div>
-      </div>
-
-      <form class="am-contact__form" id="contact-form" novalidate>
-        <div id="form-fields">
-          <div class="am-field">
-            <label for="f-nom">Nom</label>
-            <input id="f-nom" name="nom" required placeholder="Marie Dupont">
-          </div>
-          <div class="am-field">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" required type="email" placeholder="marie@example.com">
-          </div>
-          <div class="am-field">
-            <label for="f-activite">Activité</label>
-            <input id="f-activite" name="activite" placeholder="Restaurant · Institut · Traiteur · Autre">
-          </div>
-          <div class="am-field">
-            <label for="f-message">Message</label>
-            <textarea id="f-message" name="message" rows="3" placeholder="Parlez-nous de votre projet…"></textarea>
-          </div>
-          <!-- Honeypot anti-spam — ne pas supprimer -->
-          <div class="am-field am-field--honeypot" aria-hidden="true">
-            <label for="f-website">Site web</label>
-            <input id="f-website" name="website" tabindex="-1" autocomplete="off">
-          </div>
-          <div id="form-error" class="am-contact__error" role="alert"></div>
-          <button type="submit" class="am-btn am-btn--primary am-contact__submit">
-            <span class="am-contact__spinner" aria-hidden="true"></span>
-            Envoyer →
-          </button>
-        </div>
-        <div id="form-sent" class="am-contact__sent" role="status">
-          <div class="am-contact__sent-icon" aria-hidden="true"></div>
-          <h3>Message envoyé.</h3>
-          <p>On vous répond sous 24h. À très vite.</p>
-        </div>
-      </form>
+    <!-- CONTACT CTA SIMPLIFIÉ -->
+    <section id="contact" class="am-home-cta" aria-labelledby="home-cta-title">
+      <span class="am-eyebrow">— Prendre contact</span>
+      <h2 class="am-home-cta__title" id="home-cta-title">
+        On prend<br>un café<span class="am-home-cta__q"> ?</span>
+      </h2>
+      <p class="am-home-cta__sub">Dites-nous ce que vous voulez faire.</p>
+      <a href="./contact.html" class="am-btn am-btn--primary">Prendre contact →</a>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer id="agence" class="am-footer" aria-label="Pied de page AM Talents">
+  <footer class="am-footer" aria-label="Pied de page AM Talents">
     <div class="am-footer__top">
       <div class="am-footer__brand">
-        <div class="am-footer__mega">AM Talents<span class="am-footer__mega-dot">.</span></div>
+        <img src="./assets/logo_am.png" alt="AM Talents" class="am-footer__logo-img">
         <p>Agence digitale marseillaise — contenus, sites, SEO local.</p>
       </div>
       <div class="am-footer__cols">
         <div>
           <div class="am-footer__h">Services</div>
-          <a href="#services">Social media</a>
-          <a href="#services">Photo &amp; vidéo</a>
-          <a href="#services">Sites web</a>
-          <a href="#services">SEO local</a>
+          <a href="./services.html">Social media</a>
+          <a href="./services.html">Photo &amp; vidéo</a>
+          <a href="./services.html">Sites web</a>
+          <a href="./services.html">SEO local</a>
         </div>
         <div>
           <div class="am-footer__h">Agence</div>
-          <a href="#">Notre équipe</a>
-          <a href="#">Manifeste</a>
-          <a href="#">Carrières</a>
-          <a href="#">Presse</a>
+          <a href="./agence.html">Notre équipe</a>
+          <a href="./expertise.html">Notre approche</a>
+          <a href="./projets.html">Nos projets</a>
         </div>
         <div>
           <div class="am-footer__h">Contact</div>
           <a href="mailto:hello@amtalents.fr">hello@amtalents.fr</a>
-          <a href="#">@amtalents.mrs</a>
-          <a href="#">12 rue Sainte, Marseille</a>
+          <a href="https://www.instagram.com/amtalents.mrs">@amtalents.mrs</a>
+          <a href="./contact.html">12 rue Sainte, Marseille</a>
         </div>
       </div>
     </div>

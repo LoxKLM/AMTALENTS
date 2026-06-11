@@ -110,7 +110,7 @@
   flex-direction: column;
   gap: 14px;
   padding: 14px 12px;
-  animation: am-scroll-feed 22s linear infinite;
+  animation: am-scroll-feed 38s linear infinite;
 }
 
 /* --- Posts du feed --- */
@@ -136,13 +136,23 @@
   border: 2px solid #fff;
   box-shadow: 0 0 0 2px var(--am-orange-400);
   flex-shrink: 0;
+  overflow: hidden;
+  background: var(--am-steel-100);
 }
 
-/* Avatars par client */
-.am-phone__avatar--bistrot   { background: linear-gradient(135deg,#D4A574,#8B4513 70%,#2B1810); }
-.am-phone__avatar--lumiere   { background: linear-gradient(140deg,#E8C9CC,#B8848F 60%,#6E3E46); }
-.am-phone__avatar--calanques { background: linear-gradient(135deg,#A8C3D4,#4A7A94 55%,#1B3647); }
-.am-phone__avatar--pharo     { background: linear-gradient(145deg,#F5E6D3,#E8703A 55%,#8B3A1A); }
+.am-phone__avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.am-phone__live {
+  margin-left: auto;
+  color: var(--am-orange-400);
+  font-size: 9px;
+  line-height: 1;
+}
 
 .am-phone__user {
   font-size: 11px;
@@ -166,40 +176,44 @@
 .am-phone__media {
   aspect-ratio: 1/1;
   position: relative;
+  overflow: hidden;
 }
 
-/* Médias par client */
-.am-phone__media--bistrot   { background: linear-gradient(135deg,#D4A574,#8B4513 70%,#2B1810); }
-.am-phone__media--lumiere   { background: linear-gradient(140deg,#E8C9CC,#B8848F 60%,#6E3E46); }
-.am-phone__media--calanques { background: linear-gradient(135deg,#A8C3D4,#4A7A94 55%,#1B3647); }
-.am-phone__media--pharo     { background: linear-gradient(145deg,#F5E6D3,#E8703A 55%,#8B3A1A); }
-
-.am-phone__badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(255,255,255,0.92);
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-family: var(--am-font-display);
-  font-weight: 700;
-  font-size: 10px;
-  color: var(--am-steel-700);
-  letter-spacing: -0.01em;
+.am-phone__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.am-phone__caption {
-  padding: 8px 12px 12px;
-  font-size: 10px;
-  color: var(--am-ink-700);
+.am-phone__footer {
+  padding: 8px 12px 10px;
   display: flex;
-  gap: 6px;
   align-items: center;
+  gap: 10px;
+}
+
+.am-phone__actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
 }
 
 .am-phone__heart {
   color: var(--am-orange-400);
   font-size: 13px;
+}
+
+.am-phone__action-icon {
+  font-size: 12px;
+  color: var(--am-ink-400);
+}
+
+.am-phone__likes {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--am-ink-700);
 }
 
 /* --- Badges flottants autour du téléphone --- */
@@ -329,6 +343,13 @@
   font-family: var(--am-font-display);
   transition: all var(--am-dur-base) var(--am-ease-out);
   align-self: center;
+}
+
+/* Lien wrapper invisible — display:contents préserve la grille */
+.am-service-row__link {
+  text-decoration: none;
+  color: inherit;
+  display: contents;
 }
 
 /* --- Responsive --- */

@@ -45,6 +45,20 @@
 .am-nav.scrolled .am-nav__links a:hover { color: var(--am-orange-400); }
 .am-nav.scrolled .am-nav__word { color: var(--am-steel-700); }
 
+/* Pages intérieures — navbar toujours visible, fond blanc forcé */
+.am-nav--static {
+  background: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+}
+.am-nav--static .am-nav__links a,
+.am-nav--static .am-nav__word {
+  color: var(--am-ink-900) !important;
+}
+.am-nav--static .am-nav__links a:hover {
+  color: var(--am-orange-400) !important;
+}
+
 .am-nav__brand {
   display: flex;
   align-items: center;
@@ -53,19 +67,10 @@
   color: var(--am-ink-900);
 }
 
-.am-nav__mark {
-  width: 34px;
-  height: 34px;
-  border-radius: 9px;
-  background: var(--am-steel-400);
-  color: #fff;
-  font-family: var(--am-font-display);
-  font-weight: 700;
-  font-size: 13px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  letter-spacing: -0.02em;
+.am-nav__logo-img {
+  height: 52px;
+  width: auto;
+  display: block;
 }
 
 .am-nav__word {
@@ -81,8 +86,10 @@
   height: 6px;
   border-radius: 50%;
   background: var(--am-orange-400);
-  align-self: flex-end;
-  margin-bottom: 5px;
+  vertical-align: middle;
+  margin-left: 2px;
+  position: relative;
+  top: -1px;
 }
 
 .am-nav__links {
@@ -151,6 +158,13 @@
 /* Point orange dans le mega titre */
 .am-footer__mega-dot {
   color: var(--am-orange-400);
+}
+
+.am-footer__logo-img {
+  height: 80px;
+  width: auto;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .am-footer__brand p {

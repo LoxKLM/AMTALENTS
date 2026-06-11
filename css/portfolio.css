@@ -51,11 +51,17 @@
   box-shadow: var(--am-shadow-md);
 }
 
-/* Dégradés par client */
-.am-project__cover--bistrot   { background: linear-gradient(135deg,#D4A574 0%,#8B4513 55%,#2B1810 100%); }
-.am-project__cover--lumiere   { background: linear-gradient(140deg,#E8C9CC 0%,#B8848F 60%,#6E3E46 100%); }
-.am-project__cover--calanques { background: linear-gradient(135deg,#A8C3D4 0%,#4A7A94 55%,#1B3647 100%); }
-.am-project__cover--pharo     { background: linear-gradient(145deg,#F5E6D3 0%,#E8703A 55%,#8B3A1A 100%); }
+/* Covers par client */
+.am-project__cover--katzav {
+  background-image: url('../assets/katzav_card.png');
+  background-size: cover;
+  background-position: center;
+}
+.am-project__cover--domaine {
+  background-image: url('../assets/domainerobert_card.png');
+  background-size: cover;
+  background-position: center;
+}
 
 .am-project__metric {
   position: absolute;
