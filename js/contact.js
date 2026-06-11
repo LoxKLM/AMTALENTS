@@ -5,7 +5,7 @@
 
 (function() {
   emailjs.init({
-    publicKey: '-dE1barNKWhgbdBjH',
+    publicKey: 'Dg0qBJT1pGgfLfaxn',
   });
 })();
 
@@ -39,7 +39,7 @@ export function initContact() {
     try {
       await emailjs.send(
         'service_h4qnz0w',
-        'template_lvkq9cj',
+        'template_q5u5rmv',
         templateParams
       );
 
