@@ -38,7 +38,7 @@ export function initContact() {
 
     try {
       await emailjs.send(
-        'service_h4qnz0w',
+        'service_8j4sr98',
         'template_q5u5rmv',
         templateParams
       );
