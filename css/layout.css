@@ -204,6 +204,20 @@
   color: var(--am-orange-400);
 }
 
+.am-footer__cols .am-footer__contact-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.am-footer__contact-link svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+  transition: opacity var(--am-dur-fast);
+}
+.am-footer__contact-link:hover svg {
+  opacity: 1;
+}
+
 .am-footer__bottom {
   display: flex;
   justify-content: space-between;
