@@ -376,6 +376,7 @@
 
 .am-project__cover {
   width: 100%;
+  aspect-ratio: 3 / 2;
   border-radius: 12px;
   position: relative;
   overflow: hidden;
@@ -383,7 +384,8 @@
 
 .am-project__cover-img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
 }
 
