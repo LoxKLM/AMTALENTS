@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://amtalents.fr/sitemap.xml
+Sitemap: https://amtalents.com/sitemap.xml

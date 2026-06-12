@@ -160,7 +160,8 @@
   to { transform: rotate(360deg); }
 }
 
-/* Message de succès */
+/* Message de succès — masqué par défaut, affiché par JS après envoi */
+#form-sent,
 .am-contact__sent {
   text-align: center;
   padding: 40px 20px;

@@ -95,7 +95,7 @@ Le template EmailJS doit contenir les variables `{{nom}}`, `{{email}}`, `{{activ
 | `js/contact.js`  | `EMAILJS_PUBLIC_KEY`             | Clé publique EmailJS             |
 | `js/contact.js`  | `EMAILJS_SERVICE_ID`             | ID du service EmailJS            |
 | `js/contact.js`  | `EMAILJS_TEMPLATE_ID`            | ID du template EmailJS           |
-| `index.html`     | URL canonical                    | `https://amtalents.fr/`          |
+| `index.html`     | URL canonical                    | `https://amtalents.com/`          |
 | `index.html`     | `og:image` / `twitter:image`     | URL absolue de l'image OG        |
 | `sitemap.xml`    | `<lastmod>`                      | Date de la dernière modification |
 
