@@ -345,6 +345,19 @@
   animation: am-slide-down 2s infinite var(--am-ease-out);
 }
 
+.am-hero__scroll-arrow {
+  display: block;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.6);
+  animation: scrollBounce 2s ease-in-out infinite;
+  font-size: 14px;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50%       { transform: translateY(6px); opacity: 1; }
+}
+
 /* -------------------------------------------------------
    Responsive
 ------------------------------------------------------- */
