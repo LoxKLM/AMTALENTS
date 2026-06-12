@@ -3,15 +3,16 @@
    Gestion formulaire EmailJS
 ========================================================= */
 
-(function() {
-  emailjs.init({
-    publicKey: 'Dg0qBJT1pGgfLfaxn',
-  });
-})();
-
 export function initContact() {
   const form = document.getElementById('contact-form');
   if (!form) return;
+
+  if (typeof emailjs === 'undefined') {
+    console.warn('EmailJS SDK non chargé — formulaire désactivé.');
+    return;
+  }
+
+  emailjs.init({ publicKey: 'Dg0qBJT1pGgfLfaxn' });
 
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
