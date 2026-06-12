@@ -64,6 +64,7 @@
   <link rel="stylesheet" href="./css/contact.css">
   <link rel="stylesheet" href="./css/loader.css">
   <link rel="stylesheet" href="./css/pages.css">
+  <link rel="stylesheet" href="./css/instafeed.css">
 </head>
 
 <body>
@@ -651,6 +652,32 @@
       <a href="contact" class="am-btn am-btn--primary">Prendre contact →</a>
     </section>
 
+    <!-- FEED INSTAGRAM -->
+    <section class="am-instafeed" aria-labelledby="instafeed-title">
+      <div class="am-instafeed__head">
+        <span class="am-eyebrow">— Suivez-nous</span>
+        <h2 class="am-h2" id="instafeed-title">
+          Notre quotidien sur <span class="am-serif-italic">Instagram</span><span class="am-instafeed__dot">.</span>
+        </h2>
+        <p class="am-instafeed__sub">
+          Coulisses, projets clients, créations du moment.
+        </p>
+      </div>
+
+      <div class="am-instafeed__widget">
+        <behold-widget feed-id="xbnH4hfDepW42JsIhuKS"></behold-widget>
+      </div>
+
+      <div class="am-instafeed__cta">
+        <a href="https://www.instagram.com/am.talents/"
+           target="_blank"
+           rel="noopener"
+           class="am-btn am-btn--outline">
+          Voir tout sur Instagram →
+        </a>
+      </div>
+    </section>
+
   </main>
 
   <!-- FOOTER -->
@@ -692,6 +719,15 @@
 
   <!-- Point d'entrée JS — modules ES6 -->
   <script type="module" src="./js/main.js"></script>
+
+  <script>
+    (() => {
+      const d=document,s=d.createElement("script");
+      s.type="module";
+      s.src="https://w.behold.so/widget.js";
+      d.head.append(s);
+    })();
+  </script>
 
 </body>
 </html>

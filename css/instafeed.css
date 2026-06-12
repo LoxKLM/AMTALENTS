@@ -1,0 +1,54 @@
+/* =========================================================
+   AM TALENTS — instafeed.css
+   Feed Instagram Behold sur la home
+========================================================= */
+
+.am-instafeed {
+  background: var(--am-paper, #F5F5F0);
+  padding: 100px 6%;
+  border-top: 1px solid rgba(26,26,26,0.06);
+}
+
+.am-instafeed__head {
+  max-width: 800px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
+
+.am-instafeed__head .am-eyebrow {
+  display: block;
+  margin-bottom: 20px;
+}
+
+.am-instafeed__head .am-h2 {
+  margin-bottom: 16px;
+}
+
+.am-instafeed__dot {
+  color: var(--am-orange-400, #E8703A);
+}
+
+.am-instafeed__sub {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--am-ink-600, rgba(26,26,26,0.65));
+  margin: 0;
+}
+
+.am-instafeed__widget {
+  max-width: 1200px;
+  margin: 0 auto 48px;
+}
+
+.am-instafeed__cta {
+  text-align: center;
+}
+
+@media (max-width: 1024px) {
+  .am-instafeed { padding: 80px 5%; }
+}
+
+@media (max-width: 640px) {
+  .am-instafeed { padding: 60px 24px; }
+  .am-instafeed__head { margin-bottom: 40px; }
+}
