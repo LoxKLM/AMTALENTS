@@ -13,11 +13,20 @@ export function initNavbar() {
 }
 
 export function initBurger() {
-  const burger = document.querySelector('.am-nav__burger');
-  const mobile = document.querySelector('.am-nav__mobile');
-  const links  = document.querySelectorAll('.am-nav__mobile-links a');
+  const burger   = document.querySelector('.am-nav__burger');
+  const mobile   = document.querySelector('.am-nav__mobile');
+  const closeBtn = document.querySelector('.am-nav__mobile-close');
+  const links    = document.querySelectorAll('.am-nav__mobile-links a');
 
   if (!burger || !mobile) return;
+
+  function closeMenu() {
+    burger.classList.remove('is-active');
+    mobile.classList.remove('is-open');
+    document.body.style.overflow = '';
+    burger.setAttribute('aria-expanded', 'false');
+    mobile.setAttribute('aria-hidden', 'true');
+  }
 
   burger.addEventListener('click', () => {
     const isOpen = burger.classList.toggle('is-active');
@@ -27,13 +36,6 @@ export function initBurger() {
     mobile.setAttribute('aria-hidden', !isOpen);
   });
 
-  links.forEach(link => {
-    link.addEventListener('click', () => {
-      burger.classList.remove('is-active');
-      mobile.classList.remove('is-open');
-      document.body.style.overflow = '';
-      burger.setAttribute('aria-expanded', 'false');
-      mobile.setAttribute('aria-hidden', 'true');
-    });
-  });
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  links.forEach(link => link.addEventListener('click', closeMenu));
 }
