@@ -385,9 +385,51 @@
 
 @media (max-width: 640px) {
   .am-hero {
-    padding: 100px 24px 80px;
+    min-height: 90vh;
+    padding: 100px 24px 60px;
     gap: 24px;
   }
 
-  .am-hero__scroll { left: 24px; }
+  .am-hero__title {
+    font-size: clamp(2.2rem, 9vw, 3.5rem) !important;
+    line-height: 1.05;
+  }
+
+  .am-hero__meta {
+    margin-top: 2rem;
+    padding-bottom: 0;
+  }
+
+  .am-hero__lead {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .am-hero__actions {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .am-hero__actions .am-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 24px;
+  }
+
+  .hero__pills {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .am-hero__scroll {
+    bottom: 20px;
+    left: 24px;
+  }
+}
+
+@media (max-width: 380px) {
+  .am-hero { padding: 90px 20px 50px; }
+  .am-hero__title { font-size: clamp(2rem, 8.5vw, 2.8rem) !important; }
 }

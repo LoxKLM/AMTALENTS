@@ -129,6 +129,8 @@
 }
 
 @media (max-width: 640px) {
-  .am-portfolio { padding-left: 24px; padding-right: 24px; }
+  .am-portfolio { padding: 80px 24px; }
+  .am-portfolio__head { margin-bottom: 40px; }
   .am-portfolio__grid { grid-template-columns: 1fr; }
+  .am-portfolio__cta { margin-top: 40px; }
 }

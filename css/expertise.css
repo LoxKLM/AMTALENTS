@@ -87,5 +87,11 @@
 }
 
 @media (max-width: 640px) {
-  .am-expertise { padding-left: 24px; padding-right: 24px; }
+  .am-expertise { padding: 40px 24px 80px; }
+  .am-expertise__head { margin-bottom: 40px; }
+  .am-expertise__pillars {
+    gap: 32px;
+    padding-top: 32px;
+    margin-bottom: 3rem;
+  }
 }

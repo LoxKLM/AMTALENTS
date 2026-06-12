@@ -11,3 +11,29 @@ export function initNavbar() {
     nav.classList.toggle('scrolled', window.scrollY > 20);
   }, { passive: true });
 }
+
+export function initBurger() {
+  const burger = document.querySelector('.am-nav__burger');
+  const mobile = document.querySelector('.am-nav__mobile');
+  const links  = document.querySelectorAll('.am-nav__mobile-links a');
+
+  if (!burger || !mobile) return;
+
+  burger.addEventListener('click', () => {
+    const isOpen = burger.classList.toggle('is-active');
+    mobile.classList.toggle('is-open');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    burger.setAttribute('aria-expanded', isOpen);
+    mobile.setAttribute('aria-hidden', !isOpen);
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      burger.classList.remove('is-active');
+      mobile.classList.remove('is-open');
+      document.body.style.overflow = '';
+      burger.setAttribute('aria-expanded', 'false');
+      mobile.setAttribute('aria-hidden', 'true');
+    });
+  });
+}

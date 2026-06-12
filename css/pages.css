@@ -1247,6 +1247,297 @@
 
 .am-home-cta > * { position: relative; z-index: 1; }
 
+/* =========================================================
+   PAGES LÉGALES — mentions légales, politique de confidentialité
+========================================================= */
+
+.am-legal {
+  background: var(--am-paper, #F5F5F0);
+  padding: 80px 6% 100px;
+}
+
+.am-legal__inner {
+  max-width: 760px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--am-ink-700, rgba(26,26,26,0.78));
+}
+
+.am-legal__inner h2 {
+  font-family: var(--am-font-display);
+  font-weight: 700;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  letter-spacing: -0.02em;
+  color: var(--am-ink-900);
+  margin: 48px 0 16px;
+}
+
+.am-legal__inner h2:first-child { margin-top: 0; }
+
+.am-legal__inner h3 {
+  font-family: var(--am-font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--am-ink-900);
+  margin: 28px 0 8px;
+}
+
+.am-legal__inner p { margin: 0 0 1.1rem; }
+
+.am-legal__inner ul {
+  margin: 0 0 1.4rem 1.2rem;
+  padding: 0;
+}
+
+.am-legal__inner li { margin: 0 0 0.5rem; }
+
+.am-legal__inner a {
+  color: var(--am-orange-400, #E8703A);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.am-legal__updated {
+  display: block;
+  margin-top: 48px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(26,26,26,0.08);
+  font-size: 13px;
+  color: var(--am-ink-500, rgba(26,26,26,0.55));
+  font-style: italic;
+}
+
+/* =========================================================
+   FORMULAIRE CONTACT — mention RGPD
+========================================================= */
+
+.am-contact__rgpd {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--am-ink-500, rgba(26,26,26,0.55));
+  margin: 16px 0 0;
+  max-width: 480px;
+}
+
+.am-contact__rgpd a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.am-contact__rgpd a:hover { color: var(--am-orange-400, #E8703A); }
+
+/* =========================================================
+   MOBILE — ≤ 640px
+   Optimisation smartphone pour toutes les pages secondaires
+========================================================= */
+
+@media (max-width: 640px) {
+
+  /* --- Hero secondaire --- */
+
+  .am-page-hero {
+    min-height: 50vh;
+    padding: 100px 24px 40px;
+  }
+
+  .am-page-hero__title {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  .am-page-hero__sub { font-size: 15px; }
+
+  .am-page-hero::before {
+    font-size: clamp(5rem, 14vw, 8rem) !important;
+    opacity: 0.5;
+  }
+
+  /* --- Page Services — blocs détaillés --- */
+
+  .am-services-detail { padding: 60px 24px; }
+
+  .am-service-block {
+    padding: 48px 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .am-service-block::before {
+    font-size: 5rem;
+    right: 16px;
+    top: 16px;
+    transform: none;
+  }
+
+  .am-service-block__num  { font-size: 32px; }
+  .am-service-block__title { font-size: 28px !important; }
+  .am-service-block__tagline { font-size: 17px !important; }
+  .am-service-block__desc { font-size: 15px; }
+
+  .am-services-note { padding: 48px 24px; }
+
+  .am-process { padding: 60px 24px; }
+
+  .am-process__steps {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .am-process--dark .am-process__step:not(:last-child)::after { display: none; }
+
+  /* --- Grille projets --- */
+
+  .am-projects-page { padding: 60px 24px; }
+
+  .am-portfolio__grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem;
+  }
+
+  .am-project__cover { min-height: 220px; }
+  .am-project__title { font-size: 22px; }
+  .am-project__links { gap: 8px; }
+
+  .am-project__link {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  /* --- Expertise — blocs alternés --- */
+
+  .am-expertise-block {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 48px 24px;
+  }
+
+  .am-expertise-block:nth-child(even) { direction: ltr; }
+
+  .am-expertise-block__visual {
+    aspect-ratio: 16/10;
+    border-radius: 12px;
+  }
+
+  .am-expertise-detail__row { padding: 48px 24px; }
+
+  /* --- Agence — manifeste, valeurs, équipe --- */
+
+  .am-manifesto { padding: 60px 24px; }
+
+  .am-manifesto__grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .am-manifesto__pull-quote blockquote {
+    font-size: 1.2rem !important;
+    padding: 0 20px;
+  }
+
+  .am-manifesto__pull-quote blockquote::before,
+  .am-manifesto__pull-quote blockquote::after { font-size: 2.5rem; }
+
+  .am-values { padding: 60px 24px; }
+
+  .am-values__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .am-team { padding: 60px 24px; }
+
+  .am-team__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .am-team-card__photo {
+    max-width: 260px;
+    margin: 0 auto;
+  }
+
+  /* --- Bandeau engagements --- */
+
+  .am-engagements {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 24px;
+  }
+
+  .am-engagement__sep { width: 60px; height: 1px; }
+  .am-engagement { padding: 0; }
+
+  /* --- Page Contact --- */
+
+  .am-contact-page {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 60px 24px;
+  }
+
+  .am-contact-page__title { font-size: clamp(2.2rem, 9vw, 3rem) !important; }
+
+  .am-contact-page__form { padding: 24px; }
+
+  .am-contact-page__form .am-field input,
+  .am-contact-page__form .am-field textarea {
+    font-size: 16px !important;
+    padding: 12px 0;
+  }
+
+  .am-contact-page__reassurance {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+    padding: 32px 24px;
+  }
+
+  /* --- CTA sombre --- */
+  .am-cta-dark { padding: 60px 24px; }
+
+  /* --- Home CTA --- */
+  .am-home-cta { padding: 80px 24px; }
+
+  /* --- Pages légales --- */
+  .am-legal { padding: 60px 24px 80px; }
+}
+
+/* =========================================================
+   TABLETTE — 641px – 1024px
+========================================================= */
+
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .am-page-hero { padding: 120px 5% 60px; }
+
+  .am-service-block {
+    padding: 60px 40px;
+    gap: 40px;
+  }
+
+  .am-manifesto__grid { gap: 48px; }
+
+  .am-values__grid,
+  .am-team__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .am-expertise-block {
+    padding: 4rem 5%;
+    gap: 3rem;
+  }
+
+  .am-contact-page {
+    padding: 60px 40px 80px;
+    gap: 48px;
+  }
+
+  .am-cta-dark { padding: 80px 40px; }
+  .am-home-cta { padding: 100px 40px; }
+}
+
 .am-home-cta .am-eyebrow { color: var(--am-orange-300); }
 
 .am-home-cta__title {

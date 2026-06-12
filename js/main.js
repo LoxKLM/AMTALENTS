@@ -4,7 +4,7 @@
 ========================================================= */
 
 import { initLoader    } from './loader.js';
-import { initNavbar    } from './navbar.js';
+import { initNavbar, initBurger } from './navbar.js';
 import { initAnimations } from './animations.js';
 import { initPortfolio  } from './portfolio.js';
 import { initContact    } from './contact.js';
@@ -17,6 +17,7 @@ if (document.getElementById('loader')) {
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavbar();
+  initBurger();
   initAnimations();
   initPortfolio();
   initContact();

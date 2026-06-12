@@ -213,3 +213,30 @@ body {
   border-radius: 99px;
   letter-spacing: 0.02em;
 }
+
+/* =========================================================
+   RÈGLES GLOBALES ANTI-DÉBORDEMENT MOBILE
+========================================================= */
+
+html, body { overflow-x: hidden; }
+
+img, video { max-width: 100%; height: auto; }
+
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+
+  input, textarea, select { font-size: 16px !important; }
+
+  .am-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
+    line-height: 1.15;
+  }
+
+  .am-eyebrow { font-size: 11px; }
+
+  .am-btn {
+    padding: 14px 24px;
+    font-size: 15px;
+    min-height: 44px;
+  }
+}

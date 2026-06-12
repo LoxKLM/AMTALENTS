@@ -6,4 +6,6 @@
   <url><loc>https://amtalents.com/projets</loc><priority>0.8</priority></url>
   <url><loc>https://amtalents.com/agence</loc><priority>0.7</priority></url>
   <url><loc>https://amtalents.com/contact</loc><priority>0.7</priority></url>
+  <url><loc>https://amtalents.com/mentions-legales</loc><priority>0.3</priority></url>
+  <url><loc>https://amtalents.com/politique-de-confidentialite</loc><priority>0.3</priority></url>
 </urlset>
