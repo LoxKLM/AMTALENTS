@@ -249,11 +249,19 @@
   background: var(--am-ink-900);
   margin: 5px auto;
   transition: all 0.3s ease;
+  /* Empêche flexbox de réduire les barres à 0px (flex-shrink par défaut) */
+  flex-shrink: 0;
 }
 
 /* Barres blanches sur le hero sombre (accueil avant scroll) */
 .am-nav:not(.am-nav--static):not(.scrolled) .am-nav__burger span {
   background: rgba(255, 255, 255, 0.9);
+}
+
+/* Le menu ouvert a toujours un fond clair : la croix reste sombre pour rester visible,
+   même sur le hero avant scroll (sinon croix blanche sur fond blanc = invisible) */
+.am-nav:not(.am-nav--static):not(.scrolled) .am-nav__burger.is-active span {
+  background: var(--am-ink-900);
 }
 
 .am-nav__burger.is-active span:nth-child(1) {
@@ -326,7 +334,7 @@
 @media (max-width: 1024px) {
   .am-nav__links  { display: none; }
   .am-nav__cta    { display: none; }
-  .am-nav__burger { display: flex; align-items: center; justify-content: center; margin-left: auto; }
+  .am-nav__burger { display: flex; flex-direction: column; align-items: center; justify-content: center; margin-left: auto; }
 }
 
 .am-nav__mobile-close {
